@@ -32,11 +32,9 @@ public class TDD {
 		return dar;
 	}
 	public boolean containsKey (String clave){
-		boolean esta = false;
-		if(tabla.containsKey(clave) == esta){
-			esta = true;
-		}
-		return esta;
+		return tabla.containsKey(clave) == true;
+		
+
 	}
 	public boolean remove (String clave){
 		boolean exito = false;
@@ -49,4 +47,5 @@ public class TDD {
 	public int size(){
 		return tabla.size();
 	}
+
 }
