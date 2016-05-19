@@ -16,5 +16,9 @@ public class testTDD {
 		tdd.put("Nombre", "Luis");
 		assertEquals("Luis"	, tdd.get("Nombre"));
 	}
+	@Test(expected = TDDException.class)
+	public void NoExisteClave() {
+		tdd.get("Apellido");
+	}
 
 }
