@@ -34,4 +34,22 @@ public class testTDD {
 		tdd.put("Apellido", "Matamoros");
 		assertEquals("Matamoros",	tdd.get("Apellido"));
 	}
+	@Test
+	public void DarValorPorDefectoSiNoExiste() {
+		tdd.put("Nombre", "Juan");
+		assertEquals("Juan", tdd.getOrElse("Nombre","-"));
+	}
+	@Test
+	public void ExisteClave() {
+		tdd.put("Nombre", "Miguele");
+		assertEquals(true, tdd.containsKey("Nombre"));
+	}
+	@Test
+	public void ExisteNoClave() {
+		tdd.put("Apellido", "Martinez");
+		assertEquals(false, tdd.containsKey("Nombre"));
+	}
+	
+	
+	
 }
