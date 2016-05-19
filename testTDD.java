@@ -32,7 +32,7 @@ public class testTDD {
 		tdd.put("Nombre", "Luis");
 		assertEquals("Luis", tdd.get("Nombre"));
 		tdd.put("Apellido", "Matamoros");
-		assertEquals("Matamoros",	tdd.get("Apellido"));
+		assertEquals("Matamoros",tdd.get("Apellido"));
 	}
 	@Test
 	public void DarValorPorDefectoSiNoExiste() {
@@ -49,7 +49,28 @@ public class testTDD {
 		tdd.put("Apellido", "Martinez");
 		assertEquals(false, tdd.containsKey("Nombre"));
 	}
-	
+	@Test
+	public void TrueBorrarClave() {
+		tdd.put("Apellido", "Cuesta");
+		assertEquals(true, tdd.remove("Apellido"));
+	}
+	@Test
+	public void FalseSiNoBorrarClave() {
+		tdd.put("Apellido", "Cuesta");
+		assertEquals(false, tdd.remove("Nombre"));
+	}
+	@Test
+	public void SoloUnElemento() {
+		tdd.put("Apellido", "Monreal");
+		assertEquals(1, tdd.size());
+	}
+	@Test
+	public void TresElemento() {
+		tdd.put("Apellido", "Monreal");
+		tdd.put("Nombre", "Manolito");
+		tdd.put("DNI", "78595632J");
+		assertEquals(3, tdd.size());
+	}
 	
 	
 }
